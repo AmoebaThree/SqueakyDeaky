@@ -12,15 +12,19 @@ def execute():
     p = r.pubsub(ignore_subscribe_messages=True)
     p.subscribe('squeaky')
 
-    print('Startup complete')
+    r.publish('services', 'squeakydeaky.on')
     systemd.daemon.notify('READY=1')
+    print('Startup complete')
 
     try:
         for message in p.listen():
             r.publish('deaky', initio.getDistance())
     except:
         p.close()
+
         initio.cleanup()
+
+        r.publish('services', 'squeakydeaky.off')
         print('Goodbye')
 
 
