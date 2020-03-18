@@ -16,6 +16,8 @@ def execute():
     systemd.daemon.notify('READY=1')
     print('Startup complete')
 
+    r.publish('deaky', initio.getDistance())
+
     try:
         for message in p.listen():
             r.publish('deaky', initio.getDistance())
