@@ -6,12 +6,12 @@ Ultrasonic sensor distance - annoys the dog
 
 Format: \<channel> "message"
 
-**Inputs**
+### Inputs
 
 * \<squeaky> *
   * Triggers a request for the distance of the ultrasonic sensor
 
-**Outputs**
+### Outputs
 
 * \<deaky> "\<value>"
   * Returns the current distance reported by the ultrasonic sensor
